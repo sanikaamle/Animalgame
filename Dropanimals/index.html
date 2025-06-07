@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐾 Cute Animal Catcher 🐾</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-decoration cloud"></div>
+    <div class="bg-decoration star"></div>
+    <div class="bg-decoration star star-2"></div>
+    <div class="bg-decoration star star-3"></div>
+    <div class="bg-decoration star star-4"></div>
+    <div class="bg-decoration star star-5"></div>
+    <div class="bg-decoration star star-6"></div>
+
+    <div class="game-container">
+        <div class="header">
+            <h1 class="title">🐾 Animal Catcher 🐾</h1>
+            <div class="score">Score: <span id="score">0</span></div>
+            <button id="pauseButton" class="pause-button">⏸️ Pause</button>
+        </div>
+
+        <div class="hearts" id="hearts">
+            <span class="heart">❤️</span>
+            <span class="heart">❤️</span>
+            <span class="heart">❤️</span>
+        </div>
+
+        <div class="bucket" id="bucket"></div>
+
+        <div class="instructions">
+            🖱️ Move your mouse to control the bucket • Catch falling animals! 🐱🐶🐰
+        </div>
+
+        <div class="game-over" id="gameOver">
+            <h2>🎮 Game Over! 🎮</h2>
+            <p>You caught <span id="finalScore">0</span> adorable animals!</p>
+            <button class="restart-btn" onclick="restartGame()">🔄 Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
