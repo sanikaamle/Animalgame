@@ -87,7 +87,7 @@ function restartGame() {
     lives = 3;
     gameRunning = true;
     spawnRate = 2000;
-    animalSpeed = 2;
+    animalSpeed = 5;
 
     document.querySelectorAll('.animal').forEach(animal => animal.remove());
     activeAnimals.length = 0;
