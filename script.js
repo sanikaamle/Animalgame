@@ -20,6 +20,13 @@ const preloadImages = () => {
 preloadImages();
 
 let score = 0;
+let highScore = localStorage.getItem('highScore') || 0; // Load high score from localStorage
+const highScoreElement = document.getElementById('highScore');
+highScoreElement.textContent = highScore; // Display initial high score
+
+// Load celebratory sound
+const celebrationSound = new Audio('sounds/celebration.mp3');
+celebrationSound.volume = 1; // Set volume to 50% , i changed
 let lives = 3;
 let gameRunning = true;
 let animalSpeed = 5; //speed of falling animals.
@@ -63,6 +70,14 @@ function isCaught(animalRect, bucketRect) {
 
 function updateScore() {
     scoreElement.textContent = score;
+    
+    // Check if new high score
+    if (score > highScore) {
+        highScore = score;
+        highScoreElement.textContent = highScore;
+        localStorage.setItem('highScore', highScore.toString());
+        celebrationSound.play(); // Play celebratory sound
+    }
     if (score % 100 === 0) {
         spawnRate = Math.max(800, spawnRate - 200);
         animalSpeed += 0.5;
@@ -84,9 +99,10 @@ function endGame() {
 
 function restartGame() {
     score = 0;
+    scoreElement.textContent = score;
     lives = 3;
     gameRunning = true;
-    spawnRate = 2000;
+    spawnRate = 1000;
     animalSpeed = 5;
 
     document.querySelectorAll('.animal').forEach(animal => animal.remove());
