@@ -29,7 +29,7 @@ const celebrationSound = new Audio('sounds/celebration.mp3');
 celebrationSound.volume = 1; // Set volume to 50% , i changed
 let lives = 3;
 let gameRunning = true;
-let animalSpeed = 5; //speed of falling animals.
+let animalSpeed = 7; //speed of falling animals.
 let spawnRate = 1000; // Reduced from 2000ms to 1000ms
 let isPaused = false;
 const activeAnimals = [];
@@ -103,7 +103,7 @@ function restartGame() {
     lives = 3;
     gameRunning = true;
     spawnRate = 1000;
-    animalSpeed = 5;
+    animalSpeed = 7;
 
     document.querySelectorAll('.animal').forEach(animal => animal.remove());
     activeAnimals.length = 0;
